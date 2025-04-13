@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarotikka - Falını Seç</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Kartınızı Seçin 🎀</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="kartlar.html">Tarot Kartları</a></li>
+                <li><a href="fal.html">Falını Seç</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Bugünün Size Mesajını Öğrenmeye Hazır Mısınız?</h2>
+        <p>♡Falınıza bakmak için aşağıdaki butona tıklayın♡</p>
+        <button onclick="cekFal()">Kartını Seç</button>
+        <p id="falSonucu"></p>
+        <img id="falKart" src="" alt="" width="150" style="display:none;">
+    </main>
+
+    <script>
+        function cekFal() {
+            const kartlar = [ { isim: "Deli", anlam: "her an yeni başlangıçlar olabilir ama bu başlangıçların iyi ya da kötü olacağına sizin adımlarınız karar verecek çünkü önünüz görünmez bir ucurum" },
+                { isim: "Büyücü", anlam: "çok güzel yükselişler yaşayabilirsiniz şans sizden yana,istediğinizi elde etmek için her kapı açılacak" },
+                { isim: "Baş Rahibe", anlam: "enerjinizin yükseleceği ve güzel kapıların açılacağı bir döneme giriyorsunuz" },
+                { isim: "İmparatoriçe", anlam: "dişil enerjinin desteğini üzerinizde hisssedecek bolluk ve bereketin arttıgını gözlemleyeceksiniz" },
+                { isim: "İmparator", anlam: "eril enerjinin desteğini üzerinde hissedeceksiniz,otorite sizin düzeniniz için olumlu etkiler yaratacak" },
+                { isim: "Baş Rahip", anlam: "bir rehbere ihtiyac duyabilir ya da rehber siz olabilirsiniz hislerinizle hareket etmek için doğru zaman" },
+                { isim: "Aşıklar", anlam: "duygularınızın yükseleceği bir dönem olacak,sevgiyi hissedeceksiniz, sevdiklerinizle birlikte vakit gecirmeniz gereken bir dönem" },
+                { isim: "Savaş Arabası", anlam: "belirsizliken bir an önce kurtulun,zafer elde etmek için dikkatli düşünmeli ve öyle ilerlemelisiniz" },
+                { isim: "Güç", anlam: "cesaretinizin arttığı bir döneme giriyorsunuz bunu doğru yönde kullanmaya çalışın" },
+                { isim: "Ermiş", anlam: "içsel yolculuğunuza önem verin,önce şimdiki durumunuzu değerlendirin ileriyi daha sonra düşünmelisiniz " },
+                { isim: "Kader Çarkı", anlam: "her seyin değişebileceği bir dönem olacak kararlarınızı iyi değerlendirmelisiniz" },
+                { isim: "Adalet", anlam: "her seyi ince ayrıntısıyla ölçüp tartmanız gereken bir dönem dikkatli kaarlar verin adalet sizin için işleyecek" },
+                { isim: "Asılan Adam", anlam: "sessiz kalmak ve kendi içinizi dinlemek size iyi gelecek" },
+                { isim: "Ölüm", anlam: "anlık durumunuza göre dönüşüm sizi bekliyor her sey tam tersine dönebilir dikkatli ilerleyin  " },
+                { isim: "Denge", anlam: "her sey olması gerektiği gibi ilerleecek içsel huzurunuzun artacağı bir dönem" },
+                { isim: "Şeytan", anlam: "hırsınıza yenik düşüp yanlış kararlar vermeyin" },
+                { isim: "Kule", anlam: "beklenmedik gelişmelere hazır olun her an farklı olaylar yaşayabilirsiniz" },
+                { isim: "Yıldız", anlam: "umut her zaman vardır,enerjiniz yükselecek bunu daha da geliştirmek için enerji çalışmaları yapabilirsiniz" },
+                { isim: "Ay", anlam: "bilinçaltınız size mesajlar verebilir netliğe çıkmak için biraz düşünmek size iyi gelecek" },
+                { isim: "Güneş", anlam: "her sey istediğiniz gibi ilerleyecek,güzel günler sizi bekliyor olacak" },
+                { isim: "Mahkeme", anlam: "her seygün yüzüne çıkacak ve artık ne dogru ne yanlıs ayırt edeceksiniz" },
+                { isim: "Dünya", anlam: "kendinizi tamamlanmış hissedeceksiniz ve başarı mutluluk sırasıyla sizi bulacak" }
+               
+            ];
+            
+            const rastgeleKart = kartlar[Math.floor(Math.random() * kartlar.length)];
+            
+            document.getElementById("falSonucu").innerText = `${rastgeleKart.isim}: ${rastgeleKart.anlam}`;
+            document.getElementById("falKart").src = rastgeleKart.resim;
+            document.getElementById("falKart").style.display = "block";
+        }
+    </script>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN6aC7hzRe5EVZWH2r-2mDMsWyBdf6lrdXsIFmRECf57DN9wyTgdhfw_SZVmfFFpuOnoo&usqp=CAU" alt="">
+</body>
+</html>
